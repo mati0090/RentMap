@@ -1,0 +1,15 @@
+.bundle
+log/*.log
+tmp/
+.idea/*
+.DS_Store
+db/*.db
+db/schema.rb
+db/*.sqlite3
+log/*.log
+config/database.yml
+doc/api
+doc/app
+log/*.log
+.loadpath
+.project 
