@@ -7,6 +7,7 @@ describe Offer do
 
       @offer.latitude.should  == 99.9999
       @offer.longitude.should == 11.1111
+      @offer.price.should     == 1100
     end
 
     it "should call geocoder method correct" do
