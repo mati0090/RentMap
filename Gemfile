@@ -4,8 +4,12 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'nokogiri'
+gem 'geocoder'
+
 group :test, :development do
   gem 'rspec-rails'
+  gem 'fakeweb'
 end
 
 group :assets do
