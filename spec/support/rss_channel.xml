@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Rss channel</title>
+    <link>Rss link/link>
+    <description>Description</description>
+    <language>pl-PL</language>
+    <pubDate>Mon, 1 Jan 1960 00:00:00 GMT</pubDate>
+    <dc:date>1960-01-01T00:00:00Z</dc:date>
+    <dc:language>pl-PL</dc:language>
+    <image>
+      <title>Title</title>
+      <url>Url</url>
+      <link>Link</link>
+    </image>
+
+    <item>
+      <title>Offer 1</title>
+      <link>http://link-1.gumtree.pl</link>
+      <description>Offer 1</description>
+      <pubDate>Mon, 1 Jan 1960 00:00:00 GMT</pubDate>
+      <guid>http://link-1.gumtree.pl</guid>
+      <dc:date>1960-01-01T00:00:00Z</dc:date>
+    </item>
+
+    <item>
+      <title>Offer 2</title>
+      <link>http://link-2.gumtree.pl</link>
+      <description>Offer 2</description>
+      <pubDate>Mon, 1 Jan 1960 00:00:00 GMT</pubDate>
+      <guid>http://link-2.gumtree.pl</guid>
+      <dc:date>1960-01-01T00:00:00Z</dc:date>
+    </item>
+
+    <item>
+      <title>Offer 3</title>
+      <link>http://link-3.gumtree.pl</link>
+      <description>Offer 3</description>
+      <pubDate>Mon, 1 Jan 1960 00:00:00 GMT</pubDate>
+      <guid>http://link-2.gumtree.pl</guid>
+      <dc:date>1960-01-01T00:00:00Z</dc:date>
+    </item>
+  </channel>
+</rss>

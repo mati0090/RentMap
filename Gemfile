@@ -6,6 +6,7 @@ gem 'sqlite3'
 
 gem 'nokogiri'
 gem 'geocoder'
+gem 'simple-rss'
 
 group :test, :development do
   gem 'rspec-rails'

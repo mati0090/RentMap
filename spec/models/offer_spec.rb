@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'rake'
 
 describe Offer do
 
@@ -33,6 +34,23 @@ describe Offer do
       GumtreeParser.any_instance.stub(:open).and_return("not-correct-html-site")
 
       Offer.parse_from_gumtree("").should == nil
+    end
+
+    describe "Rake tasks" do
+      before(:each) do
+        @rake = Rake::Application.new
+        Rake.application = @rake
+        load "#{Rails.root}/lib/tasks/gumtree.rake"
+        Rake::Task.define_task(:environment)
+      end
+
+      it "should parse links from rss gumtree channel" do
+        Offer.should_receive(:parse_from_gumtree).with("http://link-1.gumtree.pl")
+        Offer.should_receive(:parse_from_gumtree).with("http://link-2.gumtree.pl")
+        Offer.should_receive(:parse_from_gumtree).with("http://link-3.gumtree.pl")
+
+        Rake::Task['parse:gumtree'].invoke("spec/support/rss_channel.xml")
+      end
     end
   end
 end
