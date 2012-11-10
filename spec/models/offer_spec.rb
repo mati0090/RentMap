@@ -10,23 +10,29 @@ describe Offer do
 
   describe "Parsing" do
     it "should parse offer with correct address" do
-      @offer = Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_with_address.html")
+      offer = Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_with_address.html")
 
-      @offer.latitude.should  == 99.9999
-      @offer.longitude.should == 11.1111
-      @offer.price.should     == 1100
+      offer.latitude.should  == 99.9999
+      offer.longitude.should == 11.1111
+      offer.price.should     == 1100
     end
 
     it "should call geocoder method correct" do
       Geocoder.should_receive(:coordinates).with(/Al. Street Addr 115, City, Polska/)
 
-      @offer = Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_with_address.html")
+      Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_with_address.html")
     end
 
     it "should not parse offer without full address" do
-      @offer = Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_without_address.html")
+      offer = Offer.parse_from_gumtree("#{Rails.root}/spec/support/offer_without_address.html")
 
-      @offer.should be_nil
+      offer.should be_nil
+    end
+
+    it "should skip non-offer page" do
+      GumtreeParser.any_instance.stub(:open).and_return("not-correct-html-site")
+
+      Offer.parse_from_gumtree("").should == nil
     end
   end
 end
